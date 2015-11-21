@@ -1,27 +1,35 @@
-## Laravel PHP Framework
+## Mini Accounting
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![Build Status](https://travis-ci.org/ngadep/akuntansi.svg)](https://travis-ci.org/ngadep/akuntansi)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Mini Accounting adalah aplikasi sederhana untuk membantu memahami akuntansi.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Installation
+#### server requirement
+- php >= 5.5.9
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+#### Installing Mini Accounting
+untuk memudahkan installasi, download dan install [Composer](https://getcomposer.org/) terlebih dahulu. pada folder utama jalankan perintah:
 
-## Official Documentation
+    composer install
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Langkah ini dilakukan untuk men-download ketergantunan paket.
 
-## Contributing
+Copy dan rename file `.env.example` menjadi `.env` kemudian ubah pengaturan sesuai kebutuhan. kemudian jalankan perintah:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+    php artisan migrate --seed
 
-## Security Vulnerabilities
+Langkah ini dilakukan untuk membuat database awal untuk aplikasi kita.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Langkah terahir jalankan aplikasi dengan:
 
-### License
+    email     : admin@akuntansi.com
+    passsword : 123
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Documentation
+
+### Licence
+mini accounting adalah aplikasi sumber terbuka dibawah [lisensi MIT](http://opensource.org/licenses/MIT).
