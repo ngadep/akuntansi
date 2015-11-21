@@ -7,4 +7,20 @@ php:
   - 7.0
   - hhvm
 
-script: tests/ExampleTest.php
+env:
+  - DB_HOST=127.0.0.1
+  - DB_DATABASE=akuntansi
+  - DB_USERNAME=root
+  - DB_PASSWORD=
+
+services:
+  - mysql
+
+install:
+  - composer install;
+
+before_script:
+  - mysql -e 'create database akuntansi;'
+  - php artisan migrate:refresh --seed
+
+script: phpunit
