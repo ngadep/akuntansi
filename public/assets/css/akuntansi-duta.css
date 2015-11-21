@@ -1,0 +1,11 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+.navbar-inverse {
+  background-color: #123200;
+  border-color:#000000;
+}
+form {
+  margin-bottom: 0;
+}
