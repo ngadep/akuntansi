@@ -21,7 +21,7 @@ class ExampleTest extends TestCase
     public function test_can_login()
     {
         $this->visit('/auth/login')
-            ->type('9c96b6@gmail.com','email')
+            ->type('admin@akuntansi.com','email')
             ->type('123','password')
             ->press('Sign In')
             ->seePageIs('/')

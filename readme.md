@@ -11,6 +11,7 @@ Mini Accounting adalah aplikasi sederhana untuk membantu memahami akuntansi.
 - PDO PHP Extension
 - Mbstring PHP Extension
 - Tokenizer PHP Extension
+
 #### Installing Mini Accounting
 untuk memudahkan installasi, download dan install [Composer](https://getcomposer.org/) terlebih dahulu. pada folder utama jalankan perintah:
 
