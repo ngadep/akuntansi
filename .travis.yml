@@ -1,7 +1,10 @@
 language: php
 
 php:
+  - 5.5.9
+  - 5.5
   - 5.6
+  - 7.0
   - hhvm
 
 services:
@@ -11,7 +14,7 @@ before_install:
   - mysql -e "create database IF NOT EXISTS akuntansi;" -uroot
 
 install:
-  - composer install;
+  - composer install
 
 before_script:
   - php artisan migrate:refresh --seed --force
