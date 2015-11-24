@@ -93,5 +93,11 @@
         </div>
     </div>
 </div>
-<script src="{{asset('/js/app.min.js')}}"></script>
+@stop
+@section('js-atas')
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-editable.css')}}"/>
+    <script src="{{asset('assets/js/bootstrap-editable.js')}}"></script>
+@stop
+@section('js-bawah')
+    <script src="{{asset('/js/app.min.js')}}"></script>
 @stop
