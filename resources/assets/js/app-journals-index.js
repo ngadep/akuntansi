@@ -3,14 +3,14 @@
     $('.buka-modal').on('click', function(){
         $.getJSON('/journals/show/'+$(this).data('id'),function( data ) {
             var items ='';
-            var debit=0;
+            var debit = parseInt(0);
             var credit = 0;
             $.each(data, function(key, val) {
                 items+="<tr>";
                 $.each(val, function(k, v){
                     items+="<td>"+v+"</td>";
-                    debit+= (k=='debit') ? v : 0;
-                    credit+= (k=='credit') ? v : 0;
+                    debit+= (k=='debit') ? parseInt(v) : parseInt(0);
+                    credit+= (k=='credit') ? parseInt(v) : parseInt(0);
                 });
                 items+="</tr>";
             });

@@ -25,5 +25,8 @@ elixir(function(mix) {
 */
 
 elixir(function(mix){
-    mix.scripts(['app-journals-index.js','app-accounts-begin.js'],'public/js/app.min.js');
+    mix.scripts([
+     'app-journals-index.js',
+     'app-accounts-begin.js'
+    ],'public/js/app.min.js');
 });

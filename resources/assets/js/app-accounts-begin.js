@@ -1,8 +1,4 @@
-
 (function ($) {
-    //toggle `popup` / `inline` mode
-    $.fn.editable.defaults.mode = 'popup';
-
     $('.balance').editable({
         url: 'beginning-balance',
         title: 'Enter Number',
