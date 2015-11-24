@@ -16,12 +16,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // digunakan untuk debug query yang sedang dijalankan ileh aplikasi
+        // secara default tidak dijalankan
+        /*
         DB::listen(function($sql, $bindings, $time){
             $logFile = storage_path('logs/query.log');
             $monolog = new Logger('log');
             $monolog->pushHandler(new StreamHandler($logFile), Logger::INFO);
             $monolog->info($sql, compact('bindings', 'time'));
         });
+        */
     }
 
     /**
