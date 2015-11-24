@@ -10,18 +10,15 @@ use Akuntansi\Http\Controllers\Controller;
 
 class JournalHistoryController extends Controller
 {
-    protected $accounts;
-
-    public function __construct(AccountRepository $accounts)
+    public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('company');
-        $this->accounts = $accounts;
     }
 
-    public function beginningBalance(Request $request)
+    public function beginningBalance(Request $request,AccountRepository $accounts)
     {
-        $balance = collect($this->accounts->beginningBalance());
+        $balance = collect($accounts->beginningBalance());
 
         $month = $balance->first()->month;
         $year = $balance->first()->year;
