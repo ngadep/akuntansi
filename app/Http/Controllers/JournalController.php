@@ -10,14 +10,10 @@ use Akuntansi\Http\Controllers\Controller;
 
 class JournalController extends Controller
 {
-
-    protected $journal;
-
-    public function __construct(JournalRepositoy $journal)
+    public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('company');
-        $this->journal = $journal;
     }
 
     /**
@@ -25,14 +21,14 @@ class JournalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
+    public function getIndex(JournalRepositoy $journal)
     {
-        $company = $this->journal->getCompany();
+        $company = $journal->getCompany();
 
         $month = $company->month_period;
         $year = $company->year_period;
         $period = date("F Y",mktime(0,0,0,$month,1,$year));
-        $jurnal = $this->journal->listJournal()->paginate(10);
+        $jurnal = $journal->listJournal()->paginate(10);
 
         return view('journals.index',[
             'period'=> $period,
@@ -46,9 +42,9 @@ class JournalController extends Controller
      * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function getShow($id)
+    public function getShow($id,JournalRepositoy $journal)
     {
-        $data = $this->journal->detailJournal($id);
+        $data = $journal->detailJournal($id);
         return response()->json($data);
     }
 
