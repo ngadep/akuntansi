@@ -10,15 +10,13 @@ use Akuntansi\Models;
 
 class AccountController extends Controller {
 
-	protected $accounts;
-    /**
+	/**
      * Instantiate a new UserController instance.
      */
-    public function __construct(AccountRepository $accounts)
+    public function __construct()
     {
         $this->middleware('auth');
 		$this->middleware('company');
-		$this->accounts = $accounts;
     }
 
     /**
@@ -26,10 +24,10 @@ class AccountController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Request $request)
+	public function index(Request $request,AccountRepository $accounts)
 	{
 		return view('accounts.index',[
-			'accounts'=> $this->accounts
+			'accounts'=> $accounts
                 ->listAccount()
 		]);
     }
